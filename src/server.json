@@ -1,20 +1,8 @@
 {
   "todos": [
     {
-      "todoTask": "Use Vuex",
-      "id": 1
-    },
-    {
-      "todoTask": "Use Class Components",
+      "todoTask": "Use Class",
       "id": 2
-    },
-    {
-      "todoTask": "Complete Todo App",
-      "id": 3
-    },
-    {
-      "todoTask": "Finish Vuetify",
-      "id": 4
     }
   ]
 }

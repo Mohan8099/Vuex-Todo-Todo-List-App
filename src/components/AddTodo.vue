@@ -23,12 +23,12 @@
       </div>
       <tr v-for="(todo, index) in $store.state.todos" :key="index">
         <div class="todo-container">
-          <td class="status">{{ todo.todoTask }}</td>
+          <td class="todo-task">{{ todo.todoTask }}</td>
           <td class="icon" @click="updateTodo(todo.id, index)">
-              <Pencil :size="12" />
+              <Pencil :size="14" />
            </td>
            <td class="icon" @click="removeTodo(todo.id)">
-              <Delete :size='12' />
+              <Delete :size='14' />
           </td>
         </div>
       </tr>  
@@ -118,48 +118,58 @@ export default class AddTodo extends Vue {
 .container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    margin-top: 60px;
+    justify-content: flex-start;
     align-content: center;
-    width: 70vw;
-    height: 70vh;
+    max-width: 480px;
+    width: 100%;
+    max-height: 100%;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 25px;
+    overflow: auto;
 }
 
 .text-dark {
   color: #323f4b;
+  margin-top: 30px;
 }
 
 .my-form {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 12px;
 }
 
 .form-control {
     width: 50%;
-    height: 24px;
-    border-bottom: 1px #000000 solid;
-    border-top: 0;
-    border-right: 0;
-    border-left: 0;
-    color: #323f4b;
-    margin: 8px;
+    height: 36px;
+    padding: 0 8px;
+    border: none;
+    background-color: transparent;
+    border-bottom: 1px #272727 solid;
+    color: #272727;
+    margin-right: 15px;
     outline: none;
+    border-radius: 0;
 }
 
 .add-btn {
-    height: 24px;
-    width: 24px;
+    height: 32px;
+    width: 32px;
     cursor: pointer;
-    background-color: transparent;
-    border: 0;
-    font-size: 14px;
+    flex-shrink: 0;
+    background-color: rgba(255, 255, 255, 0.7);
+    border: none;
+    border-radius: 50%;
     color: #323f4b;
     margin: 4px;
+    padding: 5px 0 12px 0;
 }
 
 .cursor{
     cursor: pointer;
-    font-size: 12px;
+    font-size: 14px;
     border: 0;
     background-color: transparent;
     width: 80px;
@@ -167,41 +177,52 @@ export default class AddTodo extends Vue {
 
 .icon {
   cursor: pointer;
-  font-size: 4px;
   border: 0;
   background-color: transparent;
   width: 80px;
 }
 
 .status {
-    font-size: 14px;
-    font-weight: 400;
+    font-size: 16px;
+    font-weight: 600;
     width: 150px;
+}
+
+.todo-task {
+  font-size: 16px;
+  font-weight: 400;
+  width: 150px;
+  padding: 0 12px;
 }
 
 .table {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: 0;
-    flex-wrap: wrap;
+    margin-bottom: 20px;
 }
 
 .table-header {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #323f4b;
-  color: aquamarine;
-  width: 60%;
-  height: 32px;
-  border-radius: 4px;
-  border: 0;
+  background-color: rgba(255, 255, 255, 0.5);
+  color: #323f4b;
+  width: 65%;
+  height: 40px;
+  border-radius: 14px;
+  border: none;
 }
 
 .todo-container {
-  margin-top: 4px;
-  border-bottom: 1px #323f4b dotted;
+  background-color: rgba(154, 255, 159, 0.5);
+  margin-top: 8px;
+  border-radius: 12px;
+  height: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 </style>
